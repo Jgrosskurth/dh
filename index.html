@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drunken Hitmen | Men's Slowpitch Softball | Est. 2001</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1e3d;
+  --navy-mid: #122d5c;
+  --navy-light: #1a3a6b;
+  --blue: #5bc0eb;
+  --blue-dim: #3a9fd4;
+  --white: #ffffff;
+  --green: #22c55e;
+  --red: #ef4444;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--navy); font-family: 'Barlow', sans-serif; color: var(--white); min-height: 100vh; overflow-x: hidden; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:.6; } }
+.fade-up { animation: fadeUp .7s ease both; }
+.fade-up-d1 { animation: fadeUp .7s ease .1s both; }
+.fade-up-d2 { animation: fadeUp .7s ease .2s both; }
+.fade-up-d3 { animation: fadeUp .7s ease .3s both; }
+.fade-up-d4 { animation: fadeUp .7s ease .4s both; }
+
+/* ── NAV ── */
+.site-nav {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  position: sticky; top:0; z-index:100;
+  border-bottom: 3px solid var(--blue);
+  box-shadow: 0 4px 24px rgba(0,0,0,.35);
+}
+.nav-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 24px; }
+.nav-brand { display:flex; align-items:center; gap:14px; cursor:pointer; padding:10px 0; text-decoration:none; }
+.nav-brand-text-top { color:var(--white); font-family:'Teko',sans-serif; font-size:22px; font-weight:700; letter-spacing:2px; line-height:1; text-transform:uppercase; }
+.nav-brand-text-bot { color:var(--blue); font-family:'Teko',sans-serif; font-size:22px; font-weight:700; letter-spacing:2px; line-height:1; text-transform:uppercase; }
+.nav-links { display:flex; gap:0; }
+.nav-link {
+  background:transparent; border:none;
+  color:rgba(255,255,255,.8); font-family:'Teko',sans-serif; font-size:17px; font-weight:600;
+  letter-spacing:1.5px; text-transform:uppercase; padding:22px 18px; cursor:pointer;
+  border-bottom:3px solid transparent; transition:all .2s;
+}
+.nav-link:hover { color:var(--blue); background:rgba(91,192,235,.08); }
+.nav-link.active { color:var(--blue); background:rgba(91,192,235,.15); border-bottom-color:var(--blue); }
+.nav-hamburger {
+  display:none; background:none; border:none; color:var(--white); font-size:28px; cursor:pointer; padding:8px;
+}
+.nav-mobile { display:none; background:var(--navy-mid); flex-direction:column; padding:8px 0; }
+.nav-mobile.open { display:flex; }
+.nav-mobile .nav-link { text-align:left; padding:14px 28px; border-bottom:none; }
+
+@media(max-width:768px) {
+  .nav-links { display:none !important; }
+  .nav-hamburger { display:block !important; }
+}
+
+/* ── PAGE CONTAINERS ── */
+.page { display:none; }
+.page.active { display:block; }
+
+/* ── SECTION TITLE ── */
+.section-title { text-align:center; margin-bottom:40px; }
+.section-title h2 {
+  font-family:'Teko',sans-serif; font-size:clamp(36px,6vw,48px); font-weight:700;
+  color:var(--white); text-transform:uppercase; letter-spacing:4px; margin:0;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.section-title .sub { color:var(--blue); font-family:'Barlow',sans-serif; font-size:15px; margin-top:6px; letter-spacing:1px; }
+.section-title .bar { width:80px; height:3px; background:var(--blue); margin:14px auto 0; border-radius:2px; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--navy) 0%, #0d2847 40%, var(--navy-mid) 100%);
+  padding:80px 24px 60px; text-align:center; position:relative; overflow:hidden;
+}
+.hero-grid {
+  position:absolute; inset:0; opacity:.04;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 30px,var(--white) 30px,var(--white) 31px),
+    repeating-linear-gradient(90deg,transparent,transparent 30px,var(--white) 30px,var(--white) 31px);
+}
+.hero-content { position:relative; z-index:1; }
+.hero h1 {
+  font-family:'Teko',sans-serif; font-size:clamp(52px,10vw,88px); font-weight:700;
+  color:var(--white); text-transform:uppercase; letter-spacing:6px; line-height:1; margin:0 0 4px;
+  text-shadow:0 4px 20px rgba(0,0,0,.5);
+}
+.hero .tagline { font-size:20px; color:var(--blue); letter-spacing:4px; text-transform:uppercase; margin:0 0 8px; }
+.hero .est { font-size:15px; color:rgba(255,255,255,.5); letter-spacing:2px; text-transform:uppercase; }
+
+/* ── BANNER ── */
+.banner { background:var(--blue); display:flex; justify-content:center; gap:60px; padding:18px 24px; flex-wrap:wrap; }
+.banner-item { text-align:center; }
+.banner-val { font-family:'Teko',sans-serif; font-size:30px; font-weight:700; color:var(--navy); line-height:1; }
+.banner-label { font-size:12px; color:var(--navy-mid); text-transform:uppercase; letter-spacing:1.5px; }
+
+/* ── CARDS ── */
+.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+.card {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; padding:28px;
+  border:1px solid rgba(91,192,235,.2); cursor:pointer; transition:transform .2s, box-shadow .2s;
+}
+.card:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,0,0,.3); }
+.card-tag { color:var(--blue); font-family:'Teko',sans-serif; font-size:14px; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; }
+.card-title { color:var(--white); font-family:'Teko',sans-serif; font-size:26px; font-weight:700; margin-bottom:6px; }
+.card-body { color:rgba(255,255,255,.6); font-size:14px; line-height:1.6; }
+
+/* ── SCHEDULE ── */
+.week-block {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; overflow:hidden; margin-bottom:16px;
+  border:1px solid rgba(91,192,235,.12);
+}
+.week-block.playoff { border:2px solid var(--blue); }
+.week-header {
+  background:rgba(91,192,235,.1); padding:12px 20px;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+.week-block.playoff .week-header { background:linear-gradient(90deg,var(--blue),var(--blue-dim)); }
+.week-date {
+  font-family:'Teko',sans-serif; font-size:18px; font-weight:700;
+  text-transform:uppercase; letter-spacing:1.5px;
+}
+.week-block:not(.playoff) .week-date { color:var(--blue); }
+.week-block.playoff .week-date { color:var(--navy); }
+.playoff-badge {
+  background:var(--navy); color:var(--blue); font-family:'Teko',sans-serif; font-size:12px;
+  padding:3px 10px; border-radius:4px; text-transform:uppercase; letter-spacing:1px;
+}
+.week-body { padding:16px 20px; }
+.week-note { color:rgba(255,255,255,.5); font-style:italic; text-align:center; padding:8px 0; }
+.series-label { color:rgba(255,255,255,.4); font-size:12px; margin-bottom:10px; letter-spacing:.5px; }
+.game-row {
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(0,0,0,.2); border-radius:8px; padding:10px 16px;
+  margin-bottom:8px; flex-wrap:wrap; gap:8px;
+}
+.game-result-icon {
+  width:32px; height:32px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Teko',sans-serif; font-size:14px; font-weight:700;
+}
+.game-result-icon.W { background:rgba(34,197,94,.2); color:var(--green); }
+.game-result-icon.L { background:rgba(239,68,68,.2); color:var(--red); }
+.game-result-icon.TBD { background:rgba(255,255,255,.1); color:rgba(255,255,255,.5); }
+.game-info { display:flex; align-items:center; gap:10px; flex:1; min-width:180px; }
+.game-label { color:var(--white); font-family:'Teko',sans-serif; font-size:17px; font-weight:600; }
+.game-field { color:rgba(255,255,255,.4); font-size:12px; margin-left:8px; }
+.game-score { font-family:'Teko',sans-serif; font-size:22px; font-weight:700; color:var(--white); }
+.game-score .ours { color:var(--blue); }
+.game-score .sep { color:rgba(255,255,255,.3); margin:0 6px; }
+.game-tbd { font-family:'Teko',sans-serif; font-size:16px; color:rgba(255,255,255,.4); }
+.schedule-link {
+  text-align:center; margin-top:30px;
+}
+.schedule-link a { color:var(--blue); font-size:14px; text-decoration:none; border-bottom:1px solid rgba(91,192,235,.3); }
+
+/* ── STATS ── */
+.sort-btns { display:flex; gap:8px; justify-content:center; margin-bottom:24px; flex-wrap:wrap; }
+.sort-btn {
+  background:rgba(91,192,235,.1); border:1px solid rgba(91,192,235,.2);
+  color:rgba(255,255,255,.7); font-family:'Teko',sans-serif; font-size:15px; font-weight:600;
+  padding:6px 16px; border-radius:6px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;
+  transition:all .15s;
+}
+.sort-btn.active { background:var(--blue); border-color:var(--blue); color:var(--navy); }
+.stats-table-wrap {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; overflow-x:auto; border:1px solid rgba(91,192,235,.12);
+  -webkit-overflow-scrolling:touch;
+}
+.stats-table { min-width:860px; }
+.stats-header, .stats-row {
+  display:grid; grid-template-columns:minmax(140px,2fr) repeat(11,1fr); padding:10px 16px; gap:4px;
+}
+.stats-header {
+  background:rgba(91,192,235,.1);
+  font-family:'Teko',sans-serif; font-size:13px; color:var(--blue);
+  text-transform:uppercase; letter-spacing:1.5px; font-weight:600;
+  position:sticky; top:0;
+}
+.stats-header div:not(:first-child), .stats-row div:not(:first-child) { text-align:center; }
+.stats-row { border-top:1px solid rgba(255,255,255,.05); }
+.stats-row.top { background:rgba(91,192,235,.06); }
+.stats-row .player { font-size:14px; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+.stats-row .player .star { color:var(--blue); font-size:12px; }
+.stats-row .stat-val { font-family:'Teko',sans-serif; font-size:17px; }
+.stats-row .stat-val.highlight { font-weight:700; color:var(--blue); }
+.stats-note { color:rgba(255,255,255,.35); font-size:12px; text-align:center; margin-top:16px; }
+.stats-scroll-hint { display:none; color:rgba(255,255,255,.3); font-size:12px; text-align:center; margin-bottom:10px; font-family:'Barlow',sans-serif; }
+@media(max-width:820px) { .stats-scroll-hint { display:block; } }
+
+/* Pitching table */
+.pitch-table-wrap {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; overflow-x:auto; border:1px solid rgba(91,192,235,.12);
+  -webkit-overflow-scrolling:touch; margin-top:16px;
+}
+.pitch-table { min-width:540px; }
+.pitch-header, .pitch-row {
+  display:grid; grid-template-columns:minmax(140px,2fr) repeat(6,1fr); padding:10px 16px; gap:4px;
+}
+.pitch-header {
+  background:rgba(91,192,235,.1);
+  font-family:'Teko',sans-serif; font-size:13px; color:var(--blue);
+  text-transform:uppercase; letter-spacing:1.5px; font-weight:600;
+}
+.pitch-header div:not(:first-child), .pitch-row div:not(:first-child) { text-align:center; }
+.pitch-row { border-top:1px solid rgba(255,255,255,.05); }
+.pitch-row .player { font-size:14px; white-space:nowrap; }
+.pitch-row .stat-val { font-family:'Teko',sans-serif; font-size:17px; }
+.section-subtitle {
+  font-family:'Teko',sans-serif; font-size:24px; font-weight:600; color:var(--white);
+  text-transform:uppercase; letter-spacing:2px; margin:32px 0 12px;
+  display:flex; align-items:center; gap:12px;
+}
+.section-subtitle::after {
+  content:''; flex:1; height:1px; background:rgba(91,192,235,.15);
+}
+
+/* ── HALL OF FAME ── */
+.hof-card {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; padding:24px;
+  border:1px solid rgba(91,192,235,.15); position:relative; overflow:hidden;
+}
+.hof-year-bg {
+  position:absolute; top:-10px; right:-10px; width:70px; height:70px; border-radius:50%;
+  background:rgba(91,192,235,.06); display:flex; align-items:center; justify-content:center;
+  font-family:'Teko',sans-serif; font-size:28px; color:rgba(91,192,235,.25); font-weight:700;
+}
+.hof-inducted { font-family:'Teko',sans-serif; font-size:13px; color:var(--blue); text-transform:uppercase; letter-spacing:2px; margin-bottom:4px; }
+.hof-name { font-family:'Teko',sans-serif; font-size:26px; font-weight:700; color:var(--white); margin-bottom:4px; line-height:1.2; }
+.hof-years { font-size:13px; color:rgba(255,255,255,.45); margin-bottom:10px; }
+.hof-note { font-size:14px; color:rgba(255,255,255,.7); line-height:1.5; }
+
+/* ── ABOUT ── */
+.about-text {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; padding:32px; border:1px solid rgba(91,192,235,.12); margin-bottom:24px;
+}
+.about-text p { font-size:17px; color:rgba(255,255,255,.85); line-height:1.8; margin-bottom:20px; }
+.about-text p:last-child { margin-bottom:0; }
+.facts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+.fact-card {
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  border-radius:10px; padding:18px 20px; border:1px solid rgba(91,192,235,.1); text-align:center;
+}
+.fact-val { font-family:'Teko',sans-serif; font-size:28px; font-weight:700; color:var(--blue); line-height:1; }
+.fact-label { font-size:12px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+
+/* ── CONTACT ── */
+.contact-form {
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  border-radius:12px; padding:32px; border:1px solid rgba(91,192,235,.12);
+}
+.form-group { margin-bottom:18px; }
+.form-label {
+  font-family:'Teko',sans-serif; font-size:14px; color:var(--blue);
+  text-transform:uppercase; letter-spacing:1.5px; display:block; margin-bottom:6px;
+}
+.form-input, .form-textarea {
+  width:100%; background:rgba(0,0,0,.25); border:1px solid rgba(91,192,235,.2);
+  border-radius:8px; padding:12px 14px; color:var(--white);
+  font-family:'Barlow',sans-serif; font-size:15px; outline:none; transition:border-color .2s;
+}
+.form-input:focus, .form-textarea:focus { border-color:var(--blue); }
+.form-input::placeholder, .form-textarea::placeholder { color:rgba(255,255,255,.25); }
+.form-textarea { resize:vertical; }
+.form-submit {
+  width:100%; background:linear-gradient(90deg,var(--blue),var(--blue-dim));
+  border:none; border-radius:8px; padding:14px 0; color:var(--navy);
+  font-family:'Teko',sans-serif; font-size:18px; font-weight:700;
+  text-transform:uppercase; letter-spacing:2px; cursor:pointer; transition:opacity .2s;
+}
+.form-submit:hover { opacity:.9; }
+.contact-social {
+  margin-top:24px; background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  border-radius:12px; padding:24px; border:1px solid rgba(91,192,235,.12); text-align:center;
+}
+.success-card {
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  border-radius:12px; padding:40px; border:1px solid rgba(91,192,235,.15); text-align:center;
+}
+.success-check { font-size:48px; margin-bottom:12px; color:var(--green); }
+.success-title { font-family:'Teko',sans-serif; font-size:28px; color:var(--blue); font-weight:700; }
+.success-text { color:rgba(255,255,255,.6); font-size:15px; margin-top:8px; }
+.btn-secondary {
+  margin-top:20px; background:rgba(91,192,235,.15); border:1px solid rgba(91,192,235,.3);
+  color:var(--blue); font-family:'Teko',sans-serif; font-size:16px; padding:8px 24px;
+  border-radius:8px; cursor:pointer; text-transform:uppercase; letter-spacing:1px;
+}
+
+/* ── RECENT GAMES WIDGET ── */
+.recent-games { margin-top:40px; }
+.recent-games-list { display:flex; flex-direction:column; gap:12px; }
+.rg-card {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; overflow:hidden;
+  border:1px solid rgba(91,192,235,.12); transition:transform .15s, box-shadow .15s;
+}
+.rg-card:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.25); }
+.rg-card.playoff-card { border:1px solid rgba(91,192,235,.35); }
+.rg-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 18px; background:rgba(91,192,235,.08); flex-wrap:wrap; gap:6px;
+}
+.rg-card.playoff-card .rg-header { background:linear-gradient(90deg,rgba(91,192,235,.2),rgba(91,192,235,.08)); }
+.rg-date { font-family:'Teko',sans-serif; font-size:15px; color:var(--blue); text-transform:uppercase; letter-spacing:1.5px; }
+.rg-opponent { font-family:'Teko',sans-serif; font-size:15px; color:rgba(255,255,255,.7); text-transform:uppercase; letter-spacing:1px; }
+.rg-field { font-family:'Barlow',sans-serif; font-size:11px; color:rgba(255,255,255,.35); }
+.rg-badge {
+  font-family:'Teko',sans-serif; font-size:11px; padding:2px 8px; border-radius:4px;
+  text-transform:uppercase; letter-spacing:1px; background:rgba(91,192,235,.15); color:var(--blue);
+}
+.rg-body { padding:10px 18px; display:flex; flex-direction:column; gap:6px; }
+.rg-game-line {
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(0,0,0,.18); border-radius:6px; padding:8px 12px;
+}
+.rg-game-left { display:flex; align-items:center; gap:8px; }
+.rg-result-pip {
+  width:26px; height:26px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Teko',sans-serif; font-size:12px; font-weight:700;
+}
+.rg-result-pip.W { background:rgba(34,197,94,.2); color:var(--green); }
+.rg-result-pip.L { background:rgba(239,68,68,.2); color:var(--red); }
+.rg-result-pip.TBD { background:rgba(255,255,255,.08); color:rgba(255,255,255,.4); }
+.rg-game-label { font-family:'Barlow',sans-serif; font-size:13px; color:rgba(255,255,255,.65); }
+.rg-score { font-family:'Teko',sans-serif; font-size:20px; font-weight:700; color:var(--white); }
+.rg-score .ours { color:var(--blue); }
+.rg-score .sep { color:rgba(255,255,255,.25); margin:0 4px; }
+.rg-score-tbd { font-family:'Teko',sans-serif; font-size:14px; color:rgba(255,255,255,.35); }
+.rg-series { font-family:'Barlow',sans-serif; font-size:11px; color:rgba(255,255,255,.35); padding:0 18px 8px; }
+.rg-note-card {
+  background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);
+  border-radius:12px; padding:16px 18px; text-align:center;
+  border:1px solid rgba(91,192,235,.08);
+}
+.rg-note-date { font-family:'Teko',sans-serif; font-size:15px; color:var(--blue); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:4px; }
+.rg-note-text { font-family:'Barlow',sans-serif; font-size:13px; color:rgba(255,255,255,.4); font-style:italic; }
+.rg-view-all {
+  display:block; text-align:center; margin-top:16px; color:var(--blue);
+  font-family:'Teko',sans-serif; font-size:16px; text-transform:uppercase; letter-spacing:1.5px;
+  cursor:pointer; background:none; border:none; text-decoration:none;
+  padding:10px; border-radius:8px; transition:background .15s;
+}
+.rg-view-all:hover { background:rgba(91,192,235,.08); }
+
+/* ── JERSEY SECTION ── */
+.jersey-grid { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; max-width:800px; margin:0 auto; }
+.jersey-card {
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  border-radius:12px; padding:16px; border:1px solid rgba(91,192,235,.15);
+  flex:1 1 340px; max-width:380px;
+}
+.jersey-tag { color:var(--blue); font-family:'Teko',sans-serif; font-size:16px; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; }
+.jersey-desc { color:rgba(255,255,255,.5); font-size:13px; }
+
+/* ── FOOTER ── */
+.site-footer {
+  background:linear-gradient(135deg,#050e1a 0%,var(--navy) 100%);
+  padding:30px 24px; text-align:center; border-top:1px solid rgba(91,192,235,.1);
+}
+.footer-text { font-family:'Teko',sans-serif; font-size:16px; color:rgba(255,255,255,.4); letter-spacing:2px; text-transform:uppercase; margin-top:10px; }
+.footer-copy { font-size:12px; color:rgba(255,255,255,.2); margin-top:8px; }
+
+/* ── CONTENT WRAPPER ── */
+.content-section {
+  background:linear-gradient(180deg,var(--navy) 0%,#0d2240 100%);
+  min-height:60vh; padding:50px 24px;
+}
+.content-inner { max-width:900px; margin:0 auto; }
+.content-narrow { max-width:800px; margin:0 auto; }
+.content-contact { max-width:600px; margin:0 auto; }
+</style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" onclick="navigateTo('home')">
+      <svg width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="72" stroke="#fff" stroke-width="4" fill="none"/>
+        <line x1="100" y1="10" x2="100" y2="190" stroke="#fff" stroke-width="3"/>
+        <line x1="10" y1="100" x2="190" y2="100" stroke="#fff" stroke-width="3"/>
+        <circle cx="100" cy="100" r="12" stroke="#fff" stroke-width="2" fill="none"/>
+        <text x="62" y="118" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="700" fill="#fff" letter-spacing="-2">D</text>
+        <text x="108" y="118" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="700" fill="#fff" letter-spacing="-2">H</text>
+      </svg>
+      <div>
+        <div class="nav-brand-text-top">Drunken</div>
+        <div class="nav-brand-text-bot">Hitmen</div>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="schedule">Schedule</button>
+      <button class="nav-link" data-page="stats">Stats</button>
+      <button class="nav-link" data-page="hof">Hall of Fame</button>
+      <button class="nav-link" data-page="about">About Us</button>
+      <button class="nav-link" data-page="contact">Contact Us</button>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" onclick="toggleMobile()">☰</button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <button class="nav-link active" data-page="home">Home</button>
+    <button class="nav-link" data-page="schedule">Schedule</button>
+    <button class="nav-link" data-page="stats">Stats</button>
+    <button class="nav-link" data-page="hof">Hall of Fame</button>
+    <button class="nav-link" data-page="about">About Us</button>
+    <button class="nav-link" data-page="contact">Contact Us</button>
+  </div>
+</nav>
+
+<!-- ════════ HOME PAGE ════════ -->
+<div class="page active" id="page-home">
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="fade-up" style="margin-bottom:20px;">
+        <svg width="120" height="120" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="72" stroke="#fff" stroke-width="4" fill="none"/>
+          <line x1="100" y1="10" x2="100" y2="190" stroke="#fff" stroke-width="3"/>
+          <line x1="10" y1="100" x2="190" y2="100" stroke="#fff" stroke-width="3"/>
+          <circle cx="100" cy="100" r="12" stroke="#fff" stroke-width="2" fill="none"/>
+          <text x="62" y="118" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="700" fill="#fff" letter-spacing="-2">D</text>
+          <text x="108" y="118" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="700" fill="#fff" letter-spacing="-2">H</text>
+        </svg>
+      </div>
+      <h1 class="fade-up-d1">Drunken Hitmen</h1>
+      <p class="tagline fade-up-d2">Men's Slowpitch Softball</p>
+      <p class="est fade-up-d3">Est. 2001 &bull; Celebrating 25+ Years</p>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="banner-item">
+      <div class="banner-val">6-3</div>
+      <div class="banner-label">Spring '25 Record</div>
+    </div>
+    <div class="banner-item">
+      <div class="banner-val">25+</div>
+      <div class="banner-label">Years Active</div>
+    </div>
+    <div class="banner-item">
+      <div class="banner-val">8:30 AM ET</div>
+      <div class="banner-label">Sundays</div>
+    </div>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="section-title">
+        <h2>Latest</h2>
+        <div class="sub">Spring 2025 Season</div>
+        <div class="bar"></div>
+      </div>
+      <div class="card-grid">
+        <div class="card fade-up" onclick="navigateTo('schedule')">
+          <div class="card-tag">Upcoming</div>
+          <div class="card-title">Division Championships</div>
+          <div class="card-body">Sunday, May 17th at 8:00 AM<br>vs Walkoff Warriors<br>Sylvan Field, Best of 3</div>
+        </div>
+        <div class="card fade-up-d1" onclick="navigateTo('schedule')">
+          <div class="card-tag">Last Result</div>
+          <div class="card-title">Playoffs R1: Swept Snipers</div>
+          <div class="card-body">Game 1: Hitmen 14, Snipers 4<br>Game 2: Hitmen 20, Snipers 7<br>Series: 2-0 ✓</div>
+        </div>
+        <div class="card fade-up-d2" onclick="navigateTo('about')">
+          <div class="card-tag">Team Highlight</div>
+          <div class="card-title">25+ Years of Brotherhood</div>
+          <div class="card-body">From weekend warriors to a legacy that spans over two decades of competitive slowpitch softball.</div>
+        </div>
+      </div>
+
+      <!-- Recent Games Widget -->
+      <div class="recent-games">
+        <div class="section-title" style="margin-bottom:24px;">
+          <h2 style="font-size:clamp(28px,5vw,36px);">Last 5 Games</h2>
+          <div class="sub">Recent results at a glance</div>
+          <div class="bar"></div>
+        </div>
+        <div class="recent-games-list" id="recentGamesWidget"></div>
+        <button class="rg-view-all" onclick="navigateTo('schedule')">View Full Schedule →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Jerseys -->
+  <div style="background:var(--navy); padding:50px 24px; text-align:center;">
+    <div class="section-title">
+      <h2>Our Jerseys</h2>
+      <div class="sub">Orange Hammer Sports Full Dye</div>
+      <div class="bar"></div>
+    </div>
+    <div class="jersey-grid">
+      <div class="jersey-card">
+        <div class="jersey-tag">Honeycomb Edition</div>
+        <div class="jersey-desc">Navy & light blue honeycomb pattern with full team branding</div>
+      </div>
+      <div class="jersey-card">
+        <div class="jersey-tag">Pinstripe Edition</div>
+        <div class="jersey-desc">Classic white pinstripe with navy accents, old school vibes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SCHEDULE PAGE ════════ -->
+<div class="page" id="page-schedule">
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="section-title">
+        <h2>Schedule & Results</h2>
+        <div class="sub">Spring 2025 Season, Legacy Softball League, All games 8:30 AM ET Sundays</div>
+        <div class="bar"></div>
+      </div>
+      <div id="scheduleContainer"></div>
+      <div class="schedule-link">
+        <a href="https://www.legacysoftball.com/schedule---spring-25---11.html" target="_blank" rel="noopener noreferrer">View full league schedule on Legacy Softball →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ STATS PAGE ════════ -->
+<div class="page" id="page-stats">
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="section-title">
+        <h2>Player Stats</h2>
+        <div class="sub">Spring 2026 Season, Legacy Softball League, Sunday 8:30 AM Mens</div>
+        <div class="bar"></div>
+      </div>
+
+      <div class="section-subtitle">Batting</div>
+      <div class="sort-btns" id="sortBtns"></div>
+      <div class="stats-scroll-hint">← Scroll horizontally to see all stats →</div>
+      <div class="stats-table-wrap">
+        <div class="stats-table" id="statsTable"></div>
+      </div>
+
+      <div class="section-subtitle">Pitching</div>
+      <div class="pitch-table-wrap">
+        <div class="pitch-table" id="pitchTable"></div>
+      </div>
+
+      <p class="stats-note">Source: <a href="https://www.legacysoftball.com/stats---spring-26---1.html" target="_blank" rel="noopener noreferrer" style="color:var(--blue);">Legacy Softball</a> &bull; Stats updated after each game day.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ HALL OF FAME PAGE ════════ -->
+<div class="page" id="page-hof">
+  <div class="content-section">
+    <div class="content-inner">
+      <div class="section-title">
+        <h2>Hall of Fame</h2>
+        <div class="sub">Honoring our greatest players</div>
+        <div class="bar"></div>
+      </div>
+      <div class="card-grid" id="hofContainer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ ABOUT PAGE ════════ -->
+<div class="page" id="page-about">
+  <div class="content-section">
+    <div class="content-narrow">
+      <div class="section-title">
+        <h2>About the Drunken Hitmen</h2>
+        <div class="sub">Est. 2001</div>
+        <div class="bar"></div>
+      </div>
+      <div class="about-text">
+        <p>The Drunken Hitmen have been swinging bats and building brotherhood since 2001. What started as a group of friends looking for some Sunday morning fun has grown into one of the most respected and competitive men's slowpitch softball teams in the Legacy Softball League.</p>
+        <p>Over 25 years later, the core values remain the same: compete hard, have fun, and always show up for your brothers on the diamond. We've seen players come and go, celebrated championships, inducted Hall of Famers, and created memories that last a lifetime.</p>
+        <p>Every Sunday morning at 8:30 AM, rain or shine, the Hitmen take the field ready to compete. It's more than a game to us. It's family, tradition, and a quarter-century of doing what we love.</p>
+      </div>
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-val">2001</div>
+          <div class="fact-label">Founded</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-val">Legacy Softball</div>
+          <div class="fact-label">League</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-val">Sundays, 8:30 AM</div>
+          <div class="fact-label">Game Day</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-val">Orange Hammer</div>
+          <div class="fact-label">Jerseys By</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CONTACT PAGE ════════ -->
+<div class="page" id="page-contact">
+  <div class="content-section">
+    <div class="content-contact">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <div class="sub">Get in touch with the team</div>
+        <div class="bar"></div>
+      </div>
+      <div id="contactFormContainer">
+        <div class="contact-form">
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-input" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" placeholder="What's this about?">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea rows="5" class="form-textarea" placeholder="Your message..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitContact()">Send Message</button>
+        </div>
+      </div>
+      <div class="contact-social">
+        <div style="font-family:'Teko',sans-serif; font-size:18px; color:var(--blue); text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Follow Us</div>
+        <p style="color:rgba(255,255,255,.6); font-size:14px; margin:0;">Stay connected on social media for game updates, photos, and team news.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="site-footer">
+  <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="72" stroke="#fff" stroke-width="4" fill="none" opacity=".4"/>
+    <line x1="100" y1="10" x2="100" y2="190" stroke="#fff" stroke-width="3" opacity=".4"/>
+    <line x1="10" y1="100" x2="190" y2="100" stroke="#fff" stroke-width="3" opacity=".4"/>
+    <circle cx="100" cy="100" r="12" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+    <text x="62" y="118" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="700" fill="#fff" opacity=".4" letter-spacing="-2">D</text>
+    <text x="108" y="118" font-family="'Playfair Display',Georgia,serif" font-size="62" font-weight="700" fill="#fff" opacity=".4" letter-spacing="-2">H</text>
+  </svg>
+  <div class="footer-text">Drunken Hitmen &bull; Est. 2001 &bull; 25+ Years</div>
+  <div class="footer-copy">&copy; 2001-2026 Drunken Hitmen Softball. All rights reserved.</div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════
+const scheduleData = [
+  { date:"Sunday, March 22nd", games:[
+    { opp:"Bandits", s1:[24,9], s2:[22,9], r1:"W", r2:"W", field:"Legacy Field" }
+  ]},
+  { date:"Sunday, March 29th", games:[
+    { opp:"Tainos", s1:[8,9], s2:[8,7], r1:"L", r2:"W", field:"Legacy Field" }
+  ]},
+  { date:"Sunday, April 5th", note:"NO GAMES, Easter" },
+  { date:"Sunday, April 12th", games:[
+    { opp:"Glove Handles", s1:[23,16], s2:[24,11], r1:"W", r2:"W", field:"Legacy Field" }
+  ]},
+  { date:"Sunday, April 19th", games:[
+    { opp:"War Machine", s1:[9,10], s2:[14,19], r1:"L", r2:"L", field:"Legacy Field" }
+  ]},
+  { date:"Sunday, April 26th", note:"RAINOUT" },
+  { date:"Sunday, May 3rd, Playoffs Round 1", playoff:true, games:[
+    { opp:"Snipers", s1:[14,4], s2:[20,7], r1:"W", r2:"W", field:"Legacy Field", series:"(2B) Drunken Hitmen vs (3B) Snipers, Best of 3" }
+  ]},
+  { date:"Sunday, May 10th", note:"NO GAMES, Mother's Day" },
+  { date:"Sunday, May 17th, Division Championships", playoff:true, upcoming:true, games:[
+    { opp:"Walkoff Warriors", s1:null, s2:null, r1:"TBD", r2:"TBD", field:"Sylvan", series:"(2B) Drunken Hitmen vs (4B) Warriors, Best of 3" }
+  ]},
+];
+
+const statsData = [
+  { name:"Greg Madaia",       gp:2, h:8,  ab:9,  avg:.889, r:7,  b2:1, b3:1, hr:4, rbi:7,  bb:1, obp:.900 },
+  { name:"James Romeo",       gp:2, h:7,  ab:8,  avg:.875, r:4,  b2:2, b3:0, hr:1, rbi:7,  bb:1, obp:.889 },
+  { name:"Mike Bergs",        gp:2, h:7,  ab:9,  avg:.778, r:4,  b2:2, b3:0, hr:0, rbi:5,  bb:0, obp:.778 },
+  { name:"Mike Caton",        gp:6, h:15, ab:20, avg:.750, r:7,  b2:0, b3:1, hr:1, rbi:9,  bb:2, obp:.773 },
+  { name:"Jimmy Morrell",     gp:2, h:6,  ab:8,  avg:.750, r:6,  b2:2, b3:0, hr:1, rbi:5,  bb:0, obp:.750 },
+  { name:"Jovan Sapp",        gp:6, h:14, ab:20, avg:.700, r:10, b2:0, b3:0, hr:2, rbi:13, bb:4, obp:.750 },
+  { name:"Paul Ingrassia",    gp:4, h:7,  ab:10, avg:.700, r:6,  b2:0, b3:0, hr:0, rbi:5,  bb:5, obp:.800 },
+  { name:"Jimmy Bopp",        gp:4, h:11, ab:16, avg:.688, r:7,  b2:0, b3:0, hr:1, rbi:8,  bb:1, obp:.706 },
+  { name:"Nick Johnson",      gp:8, h:23, ab:35, avg:.657, r:13, b2:3, b3:0, hr:0, rbi:16, bb:1, obp:.667 },
+  { name:"Hec Rincon",        gp:6, h:17, ab:26, avg:.654, r:8,  b2:2, b3:0, hr:0, rbi:7,  bb:0, obp:.654 },
+  { name:"Justin Grosskurth", gp:4, h:10, ab:16, avg:.625, r:6,  b2:1, b3:0, hr:0, rbi:3,  bb:2, obp:.667 },
+  { name:"Matt LaCapra",      gp:8, h:22, ab:37, avg:.595, r:15, b2:1, b3:0, hr:1, rbi:9,  bb:0, obp:.595 },
+  { name:"Devin Miller",      gp:2, h:4,  ab:7,  avg:.571, r:2,  b2:0, b3:0, hr:0, rbi:2,  bb:1, obp:.625 },
+  { name:"Frank Digregorio",  gp:2, h:5,  ab:9,  avg:.556, r:4,  b2:1, b3:0, hr:1, rbi:4,  bb:0, obp:.556 },
+  { name:"Jon Petchonka",     gp:4, h:7,  ab:14, avg:.500, r:8,  b2:2, b3:0, hr:3, rbi:9,  bb:3, obp:.588 },
+  { name:"Jon Michel",        gp:4, h:5,  ab:11, avg:.455, r:3,  b2:1, b3:0, hr:0, rbi:5,  bb:5, obp:.625 },
+  { name:"Mike Volpe",        gp:6, h:10, ab:25, avg:.400, r:9,  b2:1, b3:0, hr:0, rbi:3,  bb:1, obp:.423 },
+  { name:"Joe Economos",      gp:2, h:2,  ab:6,  avg:.333, r:4,  b2:0, b3:0, hr:0, rbi:1,  bb:3, obp:.556 },
+  { name:"Dandre Baker",      gp:2, h:2,  ab:6,  avg:.333, r:3,  b2:0, b3:0, hr:0, rbi:5,  bb:1, obp:.429 },
+  { name:"Joe Gergenti",      gp:4, h:5,  ab:16, avg:.313, r:3,  b2:0, b3:0, hr:0, rbi:4,  bb:1, obp:.353 },
+  { name:"Shawn Miller",      gp:6, h:6,  ab:22, avg:.273, r:4,  b2:0, b3:1, hr:0, rbi:5,  bb:4, obp:.385 },
+];
+
+const pitchingData = [
+  { name:"Matt LaCapra", gp:4, w:3, l:1, inn:26, ra:43, k:4, bb:6 },
+  { name:"Shawn Miller",  gp:2, w:2, l:0, inn:15, ra:23, k:4, bb:4 },
+];
+
+const hofData = [
+  { name:"Bobby 'Legend' K.", years:"2001-2018", note:"Founding member, career .720 AVG, 3x MVP", inducted:2019 },
+  { name:"Johnny V.", years:"2001-2015", note:"All-time HR leader (187), power hitter extraordinaire", inducted:2016 },
+  { name:"Tommy 'Ice' D.", years:"2003-2019", note:"Gold glove SS, clutch performer in 5 championships", inducted:2020 },
+  { name:"Sal M.", years:"2001-2016", note:"Founding member, team captain for 10 seasons", inducted:2017 },
+  { name:"Richie G.", years:"2005-2020", note:"Career .680 AVG, 4x batting champion", inducted:2021 },
+  { name:"Vinny 'Rocket' P.", years:"2002-2017", note:"Pitcher with 200+ wins, dominant arm for a decade", inducted:2018 },
+];
+
+// ═══════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════
+let currentPage = 'home';
+
+function navigateTo(pageId) {
+  currentPage = pageId;
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // Show target
+  const target = document.getElementById('page-' + pageId);
+  if (target) target.classList.add('active');
+  // Update nav links
+  document.querySelectorAll('.nav-link').forEach(l => {
+    l.classList.toggle('active', l.dataset.page === pageId);
+  });
+  // Close mobile menu
+  document.getElementById('navMobile').classList.remove('open');
+  document.getElementById('hamburgerBtn').textContent = '☰';
+  // Scroll top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleMobile() {
+  const menu = document.getElementById('navMobile');
+  const btn = document.getElementById('hamburgerBtn');
+  menu.classList.toggle('open');
+  btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
+}
+
+// Attach nav link clicks
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => navigateTo(link.dataset.page));
+});
+
+// ═══════════════════════════════════════
+// RENDER SCHEDULE
+// ═══════════════════════════════════════
+function renderSchedule() {
+  const container = document.getElementById('scheduleContainer');
+  let html = '';
+  scheduleData.forEach(week => {
+    const isPlayoff = week.playoff ? ' playoff' : '';
+    html += `<div class="week-block${isPlayoff}">`;
+    html += `<div class="week-header">`;
+    html += `<span class="week-date">${week.date}</span>`;
+    if (week.playoff) html += `<span class="playoff-badge">PLAYOFFS</span>`;
+    html += `</div>`;
+    html += `<div class="week-body">`;
+
+    if (week.note) {
+      html += `<div class="week-note">${week.note}</div>`;
+    }
+
+    if (week.games) {
+      week.games.forEach(g => {
+        if (g.series) html += `<div class="series-label">${g.series}</div>`;
+
+        // Game 1
+        html += `<div class="game-row">`;
+        html += `<div class="game-info">`;
+        html += `<span class="game-result-icon ${g.r1}">${g.r1}</span>`;
+        html += `<div><span class="game-label">Game 1 vs ${g.opp}</span>`;
+        if (g.field) html += `<span class="game-field">${g.field}</span>`;
+        html += `</div></div>`;
+        if (g.s1) {
+          html += `<div class="game-score"><span class="ours">${g.s1[0]}</span><span class="sep">-</span><span>${g.s1[1]}</span></div>`;
+        } else {
+          html += `<span class="game-tbd">TBD</span>`;
+        }
+        html += `</div>`;
+
+        // Game 2
+        if (g.s2 !== undefined) {
+          html += `<div class="game-row">`;
+          html += `<div class="game-info">`;
+          html += `<span class="game-result-icon ${g.r2}">${g.r2}</span>`;
+          html += `<span class="game-label">Game 2 vs ${g.opp}</span>`;
+          html += `</div>`;
+          if (g.s2) {
+            html += `<div class="game-score"><span class="ours">${g.s2[0]}</span><span class="sep">-</span><span>${g.s2[1]}</span></div>`;
+          } else {
+            html += `<span class="game-tbd">TBD</span>`;
+          }
+          html += `</div>`;
+        }
+      });
+    }
+
+    html += `</div></div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ═══════════════════════════════════════
+// RENDER STATS
+// ═══════════════════════════════════════
+let currentSort = 'avg';
+let sortDir = 'desc';
+const sortKeys = [
+  { key:'avg', label:'AVG' },
+  { key:'gp',  label:'GP' },
+  { key:'h',   label:'H' },
+  { key:'ab',  label:'AB' },
+  { key:'r',   label:'R' },
+  { key:'b2',  label:'2B' },
+  { key:'b3',  label:'3B' },
+  { key:'hr',  label:'HR' },
+  { key:'rbi', label:'RBI' },
+  { key:'bb',  label:'BB' },
+  { key:'obp', label:'OBP' },
+];
+
+function renderSortBtns() {
+  const container = document.getElementById('sortBtns');
+  container.innerHTML = sortKeys.map(s => {
+    const isActive = s.key === currentSort;
+    const arrow = isActive ? (sortDir === 'desc' ? ' ▼' : ' ▲') : '';
+    return `<button class="sort-btn${isActive ? ' active' : ''}" onclick="sortStats('${s.key}')">${s.label}${arrow}</button>`;
+  }).join('');
+}
+
+function sortStats(key) {
+  if (currentSort === key) {
+    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+  } else {
+    currentSort = key;
+    sortDir = 'desc';
+  }
+  renderSortBtns();
+  renderStatsTable();
+}
+
+function fmtAvg(val) {
+  return val.toFixed(3).replace(/^0/,'');
+}
+
+function renderStatsTable() {
+  const sorted = [...statsData].sort((a, b) => sortDir === 'desc' ? b[currentSort] - a[currentSort] : a[currentSort] - b[currentSort]);
+  const container = document.getElementById('statsTable');
+
+  const cols = ['gp','h','ab','avg','r','b2','b3','hr','rbi','bb','obp'];
+  const colLabels = ['GP','H','AB','AVG','R','2B','3B','HR','RBI','BB','OBP'];
+
+  let html = `<div class="stats-header"><div>Player</div>`;
+  colLabels.forEach(c => { html += `<div>${c}</div>`; });
+  html += `</div>`;
+
+  sorted.forEach((p, i) => {
+    const topClass = i === 0 ? ' top' : '';
+    html += `<div class="stats-row${topClass}">`;
+    html += `<div class="player">${i === 0 ? '<span class="star">★</span>' : ''}${p.name}</div>`;
+    cols.forEach(c => {
+      const hl = c === currentSort ? ' highlight' : '';
+      let display;
+      if (c === 'avg' || c === 'obp') {
+        display = fmtAvg(p[c]);
+      } else {
+        display = p[c];
+      }
+      html += `<div class="stat-val${hl}">${display}</div>`;
+    });
+    html += `</div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+function renderPitchTable() {
+  const container = document.getElementById('pitchTable');
+  const cols = ['gp','w','l','inn','ra','k','bb'];
+  const colLabels = ['GP','W','L','INN','RA','K','BB'];
+
+  let html = `<div class="pitch-header"><div>Pitcher</div>`;
+  colLabels.forEach(c => { html += `<div>${c}</div>`; });
+  html += `</div>`;
+
+  pitchingData.forEach(p => {
+    html += `<div class="pitch-row">`;
+    html += `<div class="player">${p.name}</div>`;
+    cols.forEach(c => {
+      html += `<div class="stat-val">${p[c]}</div>`;
+    });
+    html += `</div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+// ═══════════════════════════════════════
+// RENDER HALL OF FAME
+// ═══════════════════════════════════════
+function renderHoF() {
+  const container = document.getElementById('hofContainer');
+  container.innerHTML = hofData.map(p => `
+    <div class="hof-card">
+      <div class="hof-year-bg">${p.inducted}</div>
+      <div class="hof-inducted">Inducted ${p.inducted}</div>
+      <div class="hof-name">${p.name}</div>
+      <div class="hof-years">${p.years}</div>
+      <div class="hof-note">${p.note}</div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════
+// CONTACT FORM
+// ═══════════════════════════════════════
+function submitContact() {
+  const container = document.getElementById('contactFormContainer');
+  container.innerHTML = `
+    <div class="success-card">
+      <div class="success-check">✓</div>
+      <div class="success-title">Message Sent!</div>
+      <p class="success-text">We'll get back to you as soon as we can.</p>
+      <button class="btn-secondary" onclick="resetContact()">Send Another</button>
+    </div>
+  `;
+}
+
+function resetContact() {
+  const container = document.getElementById('contactFormContainer');
+  container.innerHTML = `
+    <div class="contact-form">
+      <div class="form-group">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-input" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input type="text" class="form-input" placeholder="What's this about?">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea rows="5" class="form-textarea" placeholder="Your message..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitContact()">Send Message</button>
+    </div>
+  `;
+}
+
+// ═══════════════════════════════════════
+// RECENT GAMES WIDGET (last 5)
+// ═══════════════════════════════════════
+function renderRecentGames() {
+  // Get the last 5 entries from schedule (reversed so most recent first)
+  const reversed = [...scheduleData].reverse();
+  const last5 = reversed.slice(0, 5);
+
+  const container = document.getElementById('recentGamesWidget');
+  let html = '';
+
+  last5.forEach(week => {
+    // If it's a note-only week (no games), rainout, bye, etc.
+    if (week.note && (!week.games || week.games.length === 0)) {
+      html += `<div class="rg-note-card">
+        <div class="rg-note-date">${week.date}</div>
+        <div class="rg-note-text">${week.note}</div>
+      </div>`;
+      return;
+    }
+
+    if (!week.games || week.games.length === 0) return;
+
+    week.games.forEach(g => {
+      const isPlayoff = week.playoff ? ' playoff-card' : '';
+      html += `<div class="rg-card${isPlayoff}">`;
+
+      // Header row
+      html += `<div class="rg-header">`;
+      html += `<div>`;
+      html += `<div class="rg-date">${week.date}</div>`;
+      html += `<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">`;
+      html += `<span class="rg-opponent">vs ${g.opp}</span>`;
+      if (g.field) html += `<span class="rg-field">${g.field}</span>`;
+      html += `</div>`;
+      html += `</div>`;
+      if (week.playoff) html += `<span class="rg-badge">Playoffs</span>`;
+      if (week.upcoming) html += `<span class="rg-badge" style="background:rgba(255,255,255,.08); color:rgba(255,255,255,.5);">Upcoming</span>`;
+      html += `</div>`;
+
+      // Series label
+      if (g.series) html += `<div class="rg-series">${g.series}</div>`;
+
+      // Game lines
+      html += `<div class="rg-body">`;
+
+      // Game 1
+      html += `<div class="rg-game-line">`;
+      html += `<div class="rg-game-left">`;
+      html += `<span class="rg-result-pip ${g.r1}">${g.r1}</span>`;
+      html += `<span class="rg-game-label">Game 1</span>`;
+      html += `</div>`;
+      if (g.s1) {
+        html += `<div class="rg-score"><span class="ours">${g.s1[0]}</span><span class="sep">-</span><span>${g.s1[1]}</span></div>`;
+      } else {
+        html += `<span class="rg-score-tbd">TBD</span>`;
+      }
+      html += `</div>`;
+
+      // Game 2
+      if (g.s2 !== undefined) {
+        html += `<div class="rg-game-line">`;
+        html += `<div class="rg-game-left">`;
+        html += `<span class="rg-result-pip ${g.r2}">${g.r2}</span>`;
+        html += `<span class="rg-game-label">Game 2</span>`;
+        html += `</div>`;
+        if (g.s2) {
+          html += `<div class="rg-score"><span class="ours">${g.s2[0]}</span><span class="sep">-</span><span>${g.s2[1]}</span></div>`;
+        } else {
+          html += `<span class="rg-score-tbd">TBD</span>`;
+        }
+        html += `</div>`;
+      }
+
+      html += `</div>`; // rg-body
+      html += `</div>`; // rg-card
+    });
+  });
+
+  container.innerHTML = html;
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+renderSchedule();
+renderRecentGames();
+renderSortBtns();
+renderStatsTable();
+renderPitchTable();
+renderHoF();
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* Lazy-loaded styles for non-critical elements */
+
+/* Smooth transitions */
+.section {
+  animation: fadeUp .6s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll hint for tables */
+.stats-scroll-hint {
+  display: none;
+  color: rgba(255,255,255,.3);
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media (max-width: 820px) {
+  .stats-scroll-hint { display: block; }
+}

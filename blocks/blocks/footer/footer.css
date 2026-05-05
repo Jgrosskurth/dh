@@ -1,0 +1,20 @@
+footer .footer {
+  background: linear-gradient(135deg, #050e1a 0%, var(--navy) 100%);
+  padding: 30px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(91,192,235,.1);
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-text {
+  font-family: var(--heading-font);
+  font-size: 16px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,.2);
+  margin-top: 8px;
+}

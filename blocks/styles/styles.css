@@ -1,0 +1,172 @@
+/* Drunken Hitmen - AEM Edge Delivery Services Styles */
+
+:root {
+  /* Colors */
+  --navy: #0a1e3d;
+  --navy-mid: #122d5c;
+  --navy-light: #1a3a6b;
+  --blue: #5bc0eb;
+  --blue-dim: #3a9fd4;
+  --white: #ffffff;
+  --green: #22c55e;
+  --red: #ef4444;
+
+  /* Typography */
+  --heading-font: 'Teko', sans-serif;
+  --body-font: 'Barlow', sans-serif;
+
+  /* Layout */
+  --max-width: 1200px;
+  --section-padding: 50px 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--white);
+  background: var(--navy);
+  display: none;
+}
+
+body.appear {
+  display: block;
+}
+
+header {
+  min-height: 70px;
+}
+
+main {
+  min-height: calc(100vh - 140px);
+}
+
+/* Links */
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--white);
+}
+
+h1 { font-size: clamp(40px, 8vw, 72px); letter-spacing: 4px; }
+h2 { font-size: clamp(28px, 5vw, 48px); letter-spacing: 3px; }
+h3 { font-size: clamp(22px, 3vw, 32px); }
+h4 { font-size: 24px; }
+
+p {
+  margin: 0 0 16px;
+  color: rgba(255,255,255,.8);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sections */
+main .section {
+  padding: var(--section-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+main .section.full-width {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+main .section.dark {
+  background: linear-gradient(180deg, var(--navy) 0%, #0d2240 100%);
+}
+
+/* Buttons */
+a.button, button.button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-dim));
+  color: var(--navy);
+  font-family: var(--heading-font);
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+a.button:hover, button.button:hover {
+  opacity: .9;
+  text-decoration: none;
+}
+a.button.secondary {
+  background: rgba(91,192,235,.15);
+  color: var(--blue);
+  border: 1px solid rgba(91,192,235,.3);
+}
+
+.button-container {
+  margin: 16px 0;
+}
+
+/* Section Title pattern */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Default content styling */
+.default-content-wrapper {
+  margin-bottom: 24px;
+}
+.default-content-wrapper h2 {
+  text-align: center;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.default-content-wrapper h2 + p {
+  text-align: center;
+  color: var(--blue);
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+/* Divider bar */
+hr {
+  border: none;
+  height: 3px;
+  width: 80px;
+  background: var(--blue);
+  margin: 14px auto 30px;
+  border-radius: 2px;
+}
+
+/* Responsive images */
+picture {
+  display: block;
+}
+picture img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}

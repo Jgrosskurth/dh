@@ -1,0 +1,36 @@
+.contact { max-width: 600px; margin: 0 auto; }
+.contact-form {
+  background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+  border-radius: 12px; padding: 32px; border: 1px solid rgba(91,192,235,.12);
+}
+.form-group { margin-bottom: 18px; }
+.form-label {
+  font-family: var(--heading-font); font-size: 14px; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;
+}
+.form-input, .form-textarea {
+  width: 100%; background: rgba(0,0,0,.25); border: 1px solid rgba(91,192,235,.2);
+  border-radius: 8px; padding: 12px 14px; color: var(--white);
+  font-family: var(--body-font); font-size: 15px; outline: none; transition: border-color .2s;
+  box-sizing: border-box;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--blue); }
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,.25); }
+.form-textarea { resize: vertical; }
+.form-submit {
+  width: 100%; background: linear-gradient(90deg, var(--blue), var(--blue-dim));
+  border: none; border-radius: 8px; padding: 14px 0; color: var(--navy);
+  font-family: var(--heading-font); font-size: 18px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px; cursor: pointer;
+}
+.form-submit:hover { opacity: .9; }
+.contact-social {
+  margin-top: 24px; background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+  border-radius: 12px; padding: 24px; border: 1px solid rgba(91,192,235,.12); text-align: center;
+}
+.social-title { font-family: var(--heading-font); font-size: 18px; color: var(--blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.contact-social p { color: rgba(255,255,255,.6); font-size: 14px; margin: 0; }
+.success-card { text-align: center; padding: 20px 0; }
+.success-check { font-size: 48px; margin-bottom: 12px; color: var(--green); }
+.success-title { font-family: var(--heading-font); font-size: 28px; color: var(--blue); font-weight: 700; }
+.success-text { color: rgba(255,255,255,.6); font-size: 15px; margin-top: 8px; }

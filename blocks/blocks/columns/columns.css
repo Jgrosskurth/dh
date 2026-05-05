@@ -1,0 +1,9 @@
+.columns > div {
+  display: flex; gap: 24px; flex-wrap: wrap;
+}
+.columns > div > div {
+  flex: 1; min-width: 200px;
+}
+.columns-2-cols > div > div { flex: 1 1 45%; }
+.columns-3-cols > div > div { flex: 1 1 30%; }
+.columns-4-cols > div > div { flex: 1 1 22%; }

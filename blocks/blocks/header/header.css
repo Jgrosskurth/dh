@@ -1,0 +1,102 @@
+header .header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--blue);
+  box-shadow: 0 4px 24px rgba(0,0,0,.35);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  text-decoration: none;
+}
+.nav-brand:hover { text-decoration: none; }
+.nav-brand-top {
+  color: var(--white);
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.nav-brand-bot {
+  color: var(--blue);
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0;
+}
+.nav-link {
+  background: transparent;
+  color: rgba(255,255,255,.8);
+  font-family: var(--heading-font);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 22px 18px;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  transition: all .2s;
+}
+.nav-link:hover {
+  color: var(--blue);
+  background: rgba(91,192,235,.08);
+  text-decoration: none;
+}
+.nav-link.active {
+  color: var(--blue);
+  background: rgba(91,192,235,.15);
+  border-bottom-color: var(--blue);
+}
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-mobile {
+  display: none;
+  background: var(--navy-mid);
+  flex-direction: column;
+  padding: 8px 0;
+}
+.nav-mobile.open {
+  display: flex;
+}
+.nav-mobile .nav-link {
+  text-align: left;
+  padding: 14px 28px;
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .nav-hamburger { display: block !important; }
+}

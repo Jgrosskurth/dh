@@ -1,0 +1,18 @@
+.hof { max-width: 900px; margin: 0 auto; }
+.hof-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+}
+.hof-card {
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%);
+  border-radius: 12px; padding: 24px;
+  border: 1px solid rgba(91,192,235,.15); position: relative; overflow: hidden;
+}
+.hof-year-bg {
+  position: absolute; top: -10px; right: -10px; width: 70px; height: 70px; border-radius: 50%;
+  background: rgba(91,192,235,.06); display: flex; align-items: center; justify-content: center;
+  font-family: var(--heading-font); font-size: 28px; color: rgba(91,192,235,.25); font-weight: 700;
+}
+.hof-inducted { font-family: var(--heading-font); font-size: 13px; color: var(--blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+.hof-name { font-family: var(--heading-font); font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 4px; line-height: 1.2; }
+.hof-years { font-size: 13px; color: rgba(255,255,255,.45); margin-bottom: 10px; }
+.hof-note { font-size: 14px; color: rgba(255,255,255,.7); line-height: 1.5; }
